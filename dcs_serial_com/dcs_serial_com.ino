@@ -24,7 +24,6 @@
 
 int input = 0;
 int input2 = 0;
-
 int light_intensity = 0;
 
 void setup() 
@@ -48,8 +47,6 @@ void loop()
 
   analogWrite(9,input);
   digitalWrite(13,input2);
-  
-  
 
 }
 

@@ -22,13 +22,9 @@
   
 */
 
-
 const int window_size = 100;  // define the window size.
-
 const int refPosPin = A0;     // input pin 
-
 int refPosAr[window_size];
-
 
 float ref = 0;
 
@@ -37,13 +33,10 @@ void setup()
   Serial.begin(9600);
 }
 
-
 void loop() 
 {
-  
   int p = sizeof(refPosAr)/sizeof(int);  // compute window size
   refPosAr[p] = analogRead(refPosPin);
-
   float a = 0;
   for(int i = 1; i <= p; i++)
   {
@@ -56,12 +49,8 @@ void loop()
   {
     refPosAr[i-1] = refPosAr[i];
   }
-  
 
   Serial.println(ref);
-  
 }
-
-
 
 

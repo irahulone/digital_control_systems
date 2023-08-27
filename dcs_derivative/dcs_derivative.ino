@@ -21,7 +21,6 @@
  
 */
 
-
 const int analogPin = A0; // Wiper pin to this pin
 
 float val    = 0;   // analog value 
@@ -37,30 +36,22 @@ unsigned long previousMillis1 = 0;  // time stamp
 
 void setup() 
 {
-  Serial.begin(9600);
-  
+  Serial.begin(9600); 
 }
-
-
 void loop() 
 {
   long int mil = millis();
-  
   readValue();  // moving average filter
-  
   //val = analogRead(analogPin);
-  
-  computeDer_and_Int();
-  
+
+  computeDer_and_Int();  
 
   x1 = val;
   x2 = valDer;
   
- 
   Serial.print(x1); Serial.print(",");
   Serial.print(x2); //Serial.print(", ");
   Serial.println();
-
 }
 
 
